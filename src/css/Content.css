@@ -1,0 +1,12 @@
+
+@media (min-width: 768px) {
+    #content {
+        margin-left: 232px;
+    }
+}
+
+@media (max-width: 768px) {
+    #content {
+        margin-top: 52px;
+    }
+}
