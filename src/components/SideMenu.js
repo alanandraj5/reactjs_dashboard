@@ -20,17 +20,6 @@ class SideMenu extends Component {
 
     };
 
-    handleClick = (e) => {
-        e.preventDefault();
-        window.ee = e;
-        console.log(e);
-    };
-
-    onItemClick = (event) => {
-        event.preventDefault();
-        console.log(event.currentTarget.dataset.id);
-    };
-
     render() {
         return(
             <div id="side-menu">
