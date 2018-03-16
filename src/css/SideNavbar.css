@@ -10,16 +10,10 @@
     color: rgba(119, 119, 119, 0.73);
 }
 
-.navbar-default .navbar-nav>.active>a {
-    color: #158fca;
-    background-color: #000000;
-    font-weight: 700;
-}
-
-.navbar-default .navbar-nav>.active>a:hover {
-    color: #158fca;
-    background-color: #000000;
-    font-weight: 700;
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+    color: #158fca !important;
+    background-color: #000000 !important;
+    font-weight: 700 !important;
 }
 
 .side-navbar .navbar-collapse .navbar-nav>li {
