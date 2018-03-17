@@ -1,14 +1,8 @@
 import React, {Component} from 'react';
 
-// import GoogleChart from './GoogleChart';
-// import DashboardAreaChart from './AreaChart';
 import Orders from './Orders';
 import Products from './Products';
-import BarChartDashboard from './BarChartDashboard';
-import '../css/Dashboard.css';
-
-
-
+import BarCharts from './BarCharts';
 
 class Dashboard extends Component {
 
@@ -22,17 +16,17 @@ class Dashboard extends Component {
                         </div>
 
                         <div className="col-md-4">
-                            <BarChartDashboard />
+                            <BarCharts />
                         </div>
                     </div>
 
                     <div className="row">
-                        <div className="col-md-8 product">
+                        <div className="col-md-8">
                             <Products />
                         </div>
 
                         <div className="col-md-4">
-                            <BarChartDashboard />
+
                         </div>
                     </div>
 
