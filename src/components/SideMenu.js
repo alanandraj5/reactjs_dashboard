@@ -14,6 +14,33 @@ import '../css/SideNavbar.css';
 
 class SideMenu extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            menuItems: [
+                {name: 'Dashboard', icon: 'dashboard'},
+                {name: 'Reports', icon: 'stats'},
+                {name: 'Archive', icon: 'eye-open'},
+                {name: 'Social', icon: 'tint'},
+                {name: 'Users', icon: 'user'},
+                {name: 'Documents', icon: 'duplicate'},
+                {name: 'Favorites', icon: 'star'},
+                {name: 'Tools', icon: 'wrench'},
+                {name: 'Settings', icon: 'cog'}
+            ]
+        }
+    }
+
+    listItem = (item, index) => {
+        let name = item.name;
+        let cls = name.toLowerCase() === 'dashboard' ? ' active' : '';
+        let liElement = <li key={index} onClick={this.handleMenuClick} className={cls} data-id={item.name}>
+                <a><span className={`glyphicon glyphicon-${item.icon}`}> </span>{item.name}</a>
+            </li>;
+
+        return liElement;
+    };
+
     handleMenuClick = (event) => {
 
         event.preventDefault();
@@ -30,7 +57,7 @@ class SideMenu extends Component {
         let currentElement = event.currentTarget;
         currentElement.className = currentElement.className + ' active';
 
-        let currentComponentId = currentElement.dataset.id;
+        let currentComponentId = currentElement.dataset.id.toLowerCase();
         let currentComponent = null;
         switch (currentComponentId) {
             case 'dashboard':
@@ -61,7 +88,6 @@ class SideMenu extends Component {
                 currentComponent = <Settings/>;
                 break;
             default:
-                currentComponent = <h2>Page Not Found</h2>;
                 break;
 
         }
@@ -83,33 +109,9 @@ class SideMenu extends Component {
                     </div>
                     <div id="side-navbar-menu" className="navbar-collapse collapse">
                         <ul id="menu-list" className="nav navbar-nav">
-                            <li onClick={this.handleMenuClick} className="active" data-id="dashboard">
-                                <a><span className="glyphicon glyphicon-dashboard"></span> Dashboard</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="reports">
-                                <a><span className="glyphicon glyphicon-stats"></span> Reports</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="archive">
-                                <a><span className="glyphicon glyphicon-eye-open"></span> Archive</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="social">
-                                <a><span className="glyphicon glyphicon-tint"></span> Social</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="users">
-                                <a><span className="glyphicon glyphicon-user"></span> Users</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="documents">
-                                <a><span className="glyphicon glyphicon-duplicate"></span> Documents</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="favorites">
-                                <a><span className="glyphicon glyphicon-star"></span> Favorites</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="tools">
-                                <a><span className="glyphicon glyphicon-wrench"></span> Tools</a>
-                            </li>
-                            <li onClick={this.handleMenuClick} data-id="settings">
-                                <a><span className="glyphicon glyphicon-cog"></span> Settings</a>
-                            </li>
+                            {
+                                this.state.menuItems.map(this.listItem)
+                            }
                         </ul>
 
                         <form className="navbar-form" role="search">
