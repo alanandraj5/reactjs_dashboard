@@ -4,19 +4,23 @@
 }
 
 .bar1 .CircularProgressbar-path {
-    stroke: #3e98c7 !important ;
+    stroke: url("#bar1") !important;
 }
 
 .bar2 .CircularProgressbar-path {
-    stroke: #3e98c778 !important ;
+    stroke: url("#bar2") !important;
 }
 
 .bar3 .CircularProgressbar-path {
-    stroke: #a166b9d1 !important ;
+    stroke: url("#bar3") !important;
 }
 
-.bar3 .CircularProgressbar-path {
-    stroke: #7848ecd1 !important ;
+.bar4 .CircularProgressbar-path {
+    stroke: url("#bar4") !important;
+}
+
+.bar5 .CircularProgressbar-path {
+    stroke: url("#bar4") !important;
 }
 
 .CircularProgressbar-trail {
