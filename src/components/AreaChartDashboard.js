@@ -15,7 +15,7 @@ class AreaChartDashboard extends Component {
                     areaColors={['#575080', '#2D6BB2', '#575080', '#2D6BB2']}
                     margin={{top: 10, right: 10, bottom: 50, left: 50}}
                     axisLabels={{x: 'My x Axis', y: 'My y Axis'}}
-                    width={550}
+                    width={320}
                     height={250}
                     data={[
                               [
