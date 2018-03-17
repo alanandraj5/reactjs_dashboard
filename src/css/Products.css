@@ -3,6 +3,10 @@
     margin-right: 5%;
 }
 
+.CircularProgressbar .CircularProgressbar-text {
+    fill: #ffffff;
+}
+
 .bar1 .CircularProgressbar-path {
     stroke: url("#bar1") !important;
 }
@@ -24,7 +28,7 @@
 }
 
 .CircularProgressbar-trail {
-    stroke: #333 !important ;
+    stroke: #333333 !important ;
 }
 
 

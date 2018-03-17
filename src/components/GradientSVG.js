@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const GradientSVG = (props) => {
     let { startColor, endColor, idCSS, rotation } = props;
