@@ -1,0 +1,26 @@
+.CircularProgressbar {
+    width: 15% !important;
+    margin-right: 5%;
+}
+
+.bar1 .CircularProgressbar-path {
+    stroke: #3e98c7 !important ;
+}
+
+.bar2 .CircularProgressbar-path {
+    stroke: #3e98c778 !important ;
+}
+
+.bar3 .CircularProgressbar-path {
+    stroke: #a166b9d1 !important ;
+}
+
+.bar3 .CircularProgressbar-path {
+    stroke: #7848ecd1 !important ;
+}
+
+.CircularProgressbar-trail {
+    stroke: #333 !important ;
+}
+
+

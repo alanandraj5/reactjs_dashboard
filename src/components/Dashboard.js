@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 
-import GoogleChart from './GoogleChart';
-import DashboardAreaChart from './AreaChart';
+// import GoogleChart from './GoogleChart';
+// import DashboardAreaChart from './AreaChart';
 import Orders from './Orders';
+import Products from './Products';
 import BarChartDashboard from './BarChartDashboard';
-import '../css/Dashboard.css'
+import '../css/Dashboard.css';
+
+
+
 
 class Dashboard extends Component {
 
@@ -15,6 +19,16 @@ class Dashboard extends Component {
                     <div className="row">
                         <div className="col-md-8">
                             <Orders />
+                        </div>
+
+                        <div className="col-md-4">
+                            <BarChartDashboard />
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-md-8 product">
+                            <Products />
                         </div>
 
                         <div className="col-md-4">
