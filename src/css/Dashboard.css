@@ -1,4 +1,4 @@
-#dashboard {
+#content-area {
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.82);
     padding-top: 5px;
@@ -6,13 +6,13 @@
 }
 
 @media (min-width: 768px) {
-    #dashboard {
+    #content-area {
         margin-left: 232px;
     }
 }
 
 @media (max-width: 768px) {
-    #dashboard {
+    #content-area {
         margin-top: 52px;
     }
 }
