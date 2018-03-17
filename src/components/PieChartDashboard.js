@@ -51,8 +51,8 @@ class PieChartDashboard extends Component {
                 <PieChart
                     data={[
                       { key: 'A', value: 100, color: '#A185FD' },
-                      { key: 'B', value: 200, color: '#31A3D7' },
-                      { key: 'C', value: 50, color: '#0277DA' },
+                      { key: 'B', value: 50, color: '#31A3D7' },
+                      { key: 'C', value: 100, color: '#0277DA' },
                       { key: 'C', value: 50, color: '#3D404C' },
                     ]}
                     size={200}
