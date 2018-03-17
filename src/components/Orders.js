@@ -27,7 +27,7 @@ class Orders extends Component {
     render() {
         return (
             <div id="order">
-                <h4>Your Orders</h4>
+                <h5>Your Orders</h5>
                 <table className="table">
                     <thead>
                     <tr>

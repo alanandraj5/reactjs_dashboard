@@ -19,6 +19,7 @@ class Dashboard extends Component {
                             <BarCharts />
                         </div>
                     </div>
+                    <br /><br />
 
                     <div className="row">
                         <div className="col-md-8">

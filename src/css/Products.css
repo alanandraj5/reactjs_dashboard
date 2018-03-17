@@ -32,3 +32,42 @@
 }
 
 
+#product {
+    margin-top: 20px;
+}
+
+#product h5 {
+    position: absolute;
+    top: -70px;
+}
+
+#product .brand-name {
+    position: absolute;
+    top: -25px;
+    margin-left: 25px;
+}
+
+@media (min-width:992px) {
+    #product h5 {
+        top: -55px;
+    }
+
+    #product .brand-name {
+        top: -5px;
+        margin-left: 20px;
+    }
+}
+
+@media (min-width:1200px){
+    #product .brand-name {
+        top: -5px;
+        margin-left: 25px;
+    }
+}
+
+@media (max-width:500px) {
+    #product .brand-name {
+        margin-left: 15px;
+    }
+}
+
