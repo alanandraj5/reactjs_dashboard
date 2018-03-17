@@ -1,0 +1,30 @@
+.CircularProgressbar {
+    width: 15% !important;
+    margin-right: 5%;
+}
+
+.bar1 .CircularProgressbar-path {
+    stroke: url("#bar1") !important;
+}
+
+.bar2 .CircularProgressbar-path {
+    stroke: url("#bar2") !important;
+}
+
+.bar3 .CircularProgressbar-path {
+    stroke: url("#bar3") !important;
+}
+
+.bar4 .CircularProgressbar-path {
+    stroke: url("#bar4") !important;
+}
+
+.bar5 .CircularProgressbar-path {
+    stroke: url("#bar4") !important;
+}
+
+.CircularProgressbar-trail {
+    stroke: #333 !important ;
+}
+
+
