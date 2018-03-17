@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import Orders from './Orders';
 import Products from './Products';
 import BarChartDashboard from './BarChartDashboard';
+import PieChartDashboard from './PieChartDashboard';
 import '../css/Dashboard.css';
 
 
@@ -16,6 +17,17 @@ class Dashboard extends Component {
         return (
             <div id="dashboard">
                 <div className="container-fluid">
+
+                    <div className="row">
+                        <div className="col-md-8 product">
+                            
+                        </div>
+
+                        <div className="col-md-4">
+                            <PieChartDashboard />
+                        </div>
+                    </div>
+
                     <div className="row">
                         <div className="col-md-8">
                             <Orders />
