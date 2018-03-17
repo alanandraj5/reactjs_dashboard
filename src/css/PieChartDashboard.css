@@ -1,0 +1,3 @@
+path[class^="pie-chart-slice"] {
+    stroke: none !important;
+}

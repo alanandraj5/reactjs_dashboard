@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import {Legend, PieChart, ToolTip} from 'react-easy-chart';
+import '../css/PieChartDashboard.css';
 
 class PieChartDashboard extends Component {
 
@@ -51,7 +52,8 @@ class PieChartDashboard extends Component {
                     data={[
                       { key: 'A', value: 100, color: '#A185FD' },
                       { key: 'B', value: 200, color: '#31A3D7' },
-                      { key: 'C', value: 50, color: '#0277DA' }
+                      { key: 'C', value: 50, color: '#0277DA' },
+                      { key: 'C', value: 50, color: '#3D404C' },
                     ]}
                     size={200}
                     innerHoleSize={150}
