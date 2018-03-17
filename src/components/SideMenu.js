@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import '../css/SideNavbar.css';
 
 class SideMenu extends Component {
@@ -12,7 +13,8 @@ class SideMenu extends Component {
         let element;
         for (let i = 0; i < items.length; ++i) {
             element = items[i];
-            element.classList.remove("active");
+            // element.classList.remove("active");
+            element.removeAttribute("class");
         }
 
         let currentElement = event.currentTarget;
@@ -33,32 +35,32 @@ class SideMenu extends Component {
                     </div>
                     <div id="side-navbar-menu" className="navbar-collapse collapse">
                         <ul id="menu-list" className="nav navbar-nav">
-                            <li onClick={this.handleMenuClick} data-id="dashboard" className="active">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Dashboard</a>
+                            <li onClick={this.handleMenuClick} className="active">
+                                <a><span className="glyphicon glyphicon-dashboard"></span> Dashboard</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="reports">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Reports</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-stats"></span> Reports</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="archive">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Archive</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-eye-open"></span> Archive</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="social">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Social</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-tint"></span> Social</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="users">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Users</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-user"></span> Users</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="documents">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Documents</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-duplicate"></span> Documents</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="favorites">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Favorites</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-star"></span> Favorites</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="tools">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Tools</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-wrench"></span> Tools</a>
                             </li>
-                            <li onClick={this.handleMenuClick} data-id="settings">
-                                <a href="#"><span className="glyphicon glyphicon-cloud"></span> Settings</a>
+                            <li onClick={this.handleMenuClick}>
+                                <a><span className="glyphicon glyphicon-cog"></span> Settings</a>
                             </li>
                         </ul>
 
