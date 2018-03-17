@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 
 // Custom components
 import SideMenu from './SideMenu';
-import Content from './Content';
+import Dashboard from './Dashboard';
 
 class App extends Component {
     render() {
         return(
             <div>
                 <SideMenu />
-                <Content />
+                <Dashboard />
             </div>
         )
     }
