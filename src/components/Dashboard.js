@@ -6,6 +6,7 @@ import Orders from './Orders';
 import Products from './Products';
 import BarChartDashboard from './BarChartDashboard';
 import PieChartDashboard from './PieChartDashboard';
+import AreaChartDashboard from './AreaChartDashboard';
 import '../css/Dashboard.css';
 
 
@@ -20,7 +21,7 @@ class Dashboard extends Component {
 
                     <div className="row">
                         <div className="col-md-8 product">
-                            
+                            <AreaChartDashboard />
                         </div>
 
                         <div className="col-md-4">
