@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Legend, PieChart} from 'react-easy-chart';
 import '../css/PieCharts.css';
 
-class PieChartDashboard extends Component {
+class PieCharts extends Component {
 
     constructor(props) {
         super(props);
@@ -82,4 +82,4 @@ const customStyle = {
     }
 };
 
-export default PieChartDashboard;
+export default PieCharts;

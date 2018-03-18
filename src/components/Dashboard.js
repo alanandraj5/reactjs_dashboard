@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import AreaCharts from './AreaCharts';
 import PieCharts from './PieCharts';
 import Orders from './Orders';
 import Products from './Products';
@@ -14,6 +15,7 @@ class Dashboard extends Component {
 
                     <div className="row">
                         <div className="col-md-8 product">
+                            <AreaCharts />
                         </div>
 
                         <div className="col-md-4">
