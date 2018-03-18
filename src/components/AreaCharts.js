@@ -1,76 +1,56 @@
 import React, {Component} from 'react';
 
 import {AreaChart} from 'react-easy-chart';
+import '../css/AreaCharts.css';
 const $ = require('jquery');
 
 class AreaCharts extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            areaChartWidth: 550
-        }
-    }
 
     componentDidMount = () => {
         $('#area-chart').find('.tick').find('text').attr('fill', '#fff');
     };
 
+    getChartFormat = (arr) => {
+      let chart = [];
+        for (let i=0; i<arr.length; i++) {
+            let val = {x: i, y: arr[i]};
+            chart.push(val);
+        }
+        return chart;
+    };
+
     render() {
-        // let that = this;
-        // let windowWidth = $(window).width();
-        //
-        // if (parseInt(windowWidth) < 420) {
-        //     that.setState({areaChartWidth: 350});
-        // }
-        //
-        // $(window).resize(function(){
-        //     let w = $(this).width();
-        //     if (parseInt(w) < 420) {
-        //         // that.setState({areaChartWidth: 350});
-        //     } else {
-        //         // that.setState({areaChartWidth: 450});
-        //     }
-        // });
+        let areaChartWidth = 600;
+        let windowWidth = $(window).width();
+
+        if (windowWidth < 420) {
+            areaChartWidth = 350;
+        }
+
+        let dataArray1 = [0, 3, 6, 9, 12, 15, 12, 9, 6, 6, 9, 12, 16, 20, 15, 10, 8, 6, 4, 2, 0];
+        let dataArray2 = [0, 7, 14, 21, 30, 7, 14, 21, 14, 25, 20, 15, 10, 5, 10, 15, 20, 15, 10, 5, 0];
+        let dataArray3 = [0, 5, 10, 15, 20, 25, 20, 15, 10, 5, 1, 5, 10, 15, 10, 5, 10, 8, 6, 4, 0];
+
+        let firstChartData = this.getChartFormat(dataArray1);
+        let secondCharrData = this.getChartFormat(dataArray2);
+        let thirdChartData = this.getChartFormat(dataArray3);
 
         return (
             <div id="area-chart">
                 <h5>Monthly Summary</h5>
                 <AreaChart
                     axes
-                    xTicks={20}
-                    yTicks={3}
+                    xTicks = {20}
+                    yTicks = {3}
                     grid
-                    areaColors={['#575080', '#2D6BB2', '#575080', '#2D6BB2']}
-                    // margin={{top: 10, right: 10, bottom: 50, left: 50}}
-                    // width={this.state.areaChartWidth}
-                    width={600}
-                    height={270}
-                    data={[
-                        [
-                            { x: 0, y: 0 },
-                            { x: 1, y: 7 },
-                            { x: 2, y: 14 },
-                            { x: 3, y: 21 },
-                            { x: 4, y: 30 },
-                            { x: 5, y: 7 },
-                            { x: 6, y: 14 },
-                            { x: 7, y: 21 },
-                            { x: 8, y: 14 },
-                            { x: 9, y: 25 },
-                            { x: 10, y: 20 },
-                            { x: 11, y: 15 },
-                            { x: 12, y: 10 },
-                            { x: 13, y: 5 },
-                            { x: 14, y: 10 },
-                            { x: 15, y: 15 },
-                            { x: 16, y: 20 },
-                            { x: 17, y: 15 },
-                            { x: 18, y: 10 },
-                            { x: 19, y: 5 },
-                            { x: 20, y: 0 }
-                        ]
-                    ]}
+                    areaColors = {
+                        ['#D2B4DE', '#3779D8', '#5DADE2']
+                    }
+                    width = {areaChartWidth}
+                    height = {270}
+                    data = {
+                        [firstChartData, secondCharrData, thirdChartData]
+                    }
                 />
             </div>
         )

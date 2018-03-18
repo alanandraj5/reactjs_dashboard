@@ -14,7 +14,7 @@ class Dashboard extends Component {
                 <div className="container-fluid">
 
                     <div className="row">
-                        <div className="col-md-8 product">
+                        <div className="col-md-8">
                             <AreaCharts />
                         </div>
 
