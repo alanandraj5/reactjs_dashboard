@@ -7,63 +7,50 @@ class PieChartDashboard extends Component {
 
     constructor(props) {
         super(props);
-    }
-
-    mouseOverHandler(d, e) {
-        this.setState({
-            showToolTip: true,
-            top: e.y,
-            left: e.x,
-            value: d.value,
-            key: d.data.key});
-    }
-
-    mouseMoveHandler(e) {
-        if (this.state.showToolTip) {
-            this.setState({top: e.y, left: e.x});
+        this.state = {
+            showTxt: false,
+            reportPercentage: null,
+            color: '#000000'
         }
     }
 
-    mouseOutHandler() {
-        this.setState({showToolTip: false});
-    }
+    mouseOverHandler = (report, event) => {
+        let reportPercentage = report.data.reportPercentage;
+        let color = report.data.color;
 
-    createTooltip() {
-        if (this.state.showToolTip) {
-            return (
-                <ToolTip
-                    top={this.state.top}
-                    left={this.state.left}
-                >
-                    The value of {this.state.key} is {this.state.value}
-                </ToolTip>
-            );
-        }
-        return false;
-    }
+        this.setState({showTxt: true, color, reportPercentage });
+    };
 
+    mouseOutHandler = () => {
+        this.setState({showTxt: false});
+    };
 
     render() {
         return (
             <div>
 
+                {
+                    this.state.showTxt?
+                        <span className="summary-report-txt">
+                            <span className="report-percentage-txt"
+                                style={{color: this.state.color}}>{this.state.reportPercentage}</span>
+                            <br /><span className="report-avg-txt">Avg</span>
+                        </span> : null
+                }
 
                 <PieChart
                     data={[
-                      { key: 'A', value: 100, color: '#A185FD' },
-                      { key: 'B', value: 50, color: '#31A3D7' },
-                      { key: 'C', value: 100, color: '#0277DA' },
-                      { key: 'C', value: 50, color: '#3D404C' },
+                      { key: 'A', value: 100, color: '#A185FD', reportPercentage: '+15%' },
+                      { key: 'B', value: 50, color: '#31A3D7', reportPercentage: '+35%' },
+                      { key: 'C', value: 100, color: '#0277DA', reportPercentage: '+20%' },
+                      { key: 'D', value: 50, color: '#3D404C', reportPercentage: '+30%' },
                     ]}
                     size={200}
                     innerHoleSize={150}
-                    mouseOverHandler={this.mouseOverHandler.bind(this)}
-                    mouseOutHandler={this.mouseOutHandler.bind(this)}
-                    mouseMoveHandler={this.mouseMoveHandler.bind(this)}
+                    mouseOverHandler={this.mouseOverHandler}
+                    mouseOutHandler={this.mouseOutHandler}
                     padding={10}
-                    styles={this.styles}
                 />
-
 
                 <Legend
                     data={pieDataCustom}
@@ -89,43 +76,9 @@ const config = [
     {color: '#0277DA'}
 ];
 
-/* default component styles */
-const defaultStyles = {
-    '.legend': {
-        'list-style': 'none',
-        margin: 0,
-        padding: 0
-    },
-    '.legend li': {
-        display: 'block',
-        lineHeight: '24px',
-        marginRight: '24px',
-        marginBottom: '6px',
-        paddingLeft: '24px',
-        position: 'relative'
-    },
-    '.legend li.horizontal': {
-        display: 'inline-block'
-    },
-    '.legend .icon': {
-        width: '12px',
-        height: '12px',
-        background: 'red',
-        borderRadius: '6px',
-        position: 'absolute',
-        left: '0',
-        top: '50%',
-        marginTop: '-6px'
-    }
-};
-
-/* example override */
 const customStyle = {
-    '.legend': {
-        backgroundColor: '#2F3239',
-        fontSize: '0.8em',
-        maxWidth: '300px',
-        padding: '12px'
+    '.legend .icon': {
+        borderRadius: '0px'
     }
 };
 
